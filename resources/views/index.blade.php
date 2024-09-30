@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Blog Index')
+@include('layouts.navbar') <!-- Navbar inclusion -->
 
 @section('content')
 

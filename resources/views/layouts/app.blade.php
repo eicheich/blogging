@@ -20,7 +20,6 @@
     </style>
 </head>
 <body>
-    @include('layouts.navbar') <!-- Navbar inclusion -->
     <!-- Main Content -->
     @yield('content')
 
