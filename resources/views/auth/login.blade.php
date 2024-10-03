@@ -6,11 +6,11 @@
 <div class="container d-flex justify-content-center align-items-center min-vh-100">
     <div class="card p-4 shadow-lg" style="width: 22rem;">
         <h2 class="text-center mb-4">Login</h2>
-        <form action="/submit-login" method="POST">
+        <form action="{{ route('login.post') }}" method="POST">
             @csrf
             <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" id="username" name="username" required>
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
@@ -28,7 +28,7 @@
         </form>
         <div class="mt-3 text-center">
             <span>Don't have an account?</span> 
-            <a href="/register" class="text-decoration-none">Register</a>
+            <a href="{{ route('register.page') }}" class="text-decoration-none">Register</a>
         </div>
     </div>
 </div>

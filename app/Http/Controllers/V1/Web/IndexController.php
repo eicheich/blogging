@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers\V1\Web;
 
-abstract class Controller
+use Illuminate\Http\Request;
+
+class IndexController
 {
+
     public function index()
     {
         return view('index');
     }
+    //
 }
