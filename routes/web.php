@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\V1\Web\AuthController;
 use App\Http\Controllers\V1\Web\EmailVerificationController;
 use App\Http\Controllers\V1\Web\IndexController;
+use App\Http\Controllers\V1\Web\PostController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,6 +25,15 @@ Route::prefix('auth')->group(function () {
 // prefix middleware
 Route::middleware('auth')->group(function () {
     Route::get('index', [IndexController::class, 'index'])->name('index');
+});
+
+Route::prefix('post')->middleware('auth')->group(function () {
+    Route::post('store', [PostController::class, 'store'])->name('post.store');
+    Route::get('edit/{id}', [PostController::class, 'edit'])->name('post.edit');
+    Route::post('update/{id}', [PostController::class, 'update'])->name('post.update');
+    Route::post('delete/{id}', [PostController::class, 'delete'])->name('post.delete');
+    Route::get('show/{id}', [PostController::class, 'show'])->name('post.show');
+    Route::get('index', [PostController::class, 'index'])->name('post.index');
 });
 
 

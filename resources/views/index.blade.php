@@ -6,29 +6,7 @@
 @section('content')
 
 <div class="container mt-5">
-    <div class="card mb-4">
-        <div class="card-header">
-            Write a Blog Post
-        </div>
-        <div class="card-body">
-            <form action="#" method="POST">
-                @csrf <!-- Protects the form with Laravel's CSRF token -->
-                <div class="form-group mb-3">
-                    <label for="title">Blog Title</label>
-                    <input type="text" class="form-control" id="title" name="title" placeholder="Enter blog title" required>
-                </div>
-                <div class="form-group mb-3">
-                    <label for="content">Content</label>
-                    <textarea class="form-control" id="content" name="content" rows="5" placeholder="Write your blog content here" required></textarea>
-                </div>
-                <div class="form-group mb-3">
-                    <label for="image">Image URL</label>
-                    <input type="url" class="form-control" id="image" name="image" placeholder="Enter the image URL for your post (optional)">
-                </div>
-                <button type="submit" class="btn btn-primary">Submit Blog Post</button>
-            </form>
-        </div>
-    </div>
+    @include('components.write-card') <!-- Write card inclusion -->
     <div class="row">
         <!-- Blog posts section -->
         <div class="col-md-8">
