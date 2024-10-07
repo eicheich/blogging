@@ -1,10 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\V1\Web;
 
-use Illuminate\Http\Request;
-
-class InteractController extends Controller
+class InteractController 
 {
     //
 }

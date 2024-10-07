@@ -1,51 +1,17 @@
 @extends('layouts.app')
 
 @section('title', 'Blog Index')
+@include('layouts.navbar') <!-- Navbar inclusion -->
 
 @section('content')
 
 <div class="container mt-5">
-    <div class="card mb-4">
-        <div class="card-header">
-            Write a Blog Post
-        </div>
-        <div class="card-body">
-            <form action="#" method="POST">
-                @csrf <!-- Protects the form with Laravel's CSRF token -->
-                <div class="form-group mb-3">
-                    <label for="title">Blog Title</label>
-                    <input type="text" class="form-control" id="title" name="title" placeholder="Enter blog title" required>
-                </div>
-                <div class="form-group mb-3">
-                    <label for="content">Content</label>
-                    <textarea class="form-control" id="content" name="content" rows="5" placeholder="Write your blog content here" required></textarea>
-                </div>
-                <div class="form-group mb-3">
-                    <label for="image">Image URL</label>
-                    <input type="url" class="form-control" id="image" name="image" placeholder="Enter the image URL for your post (optional)">
-                </div>
-                <button type="submit" class="btn btn-primary">Submit Blog Post</button>
-            </form>
-        </div>
-    </div>
+    @include('layouts.sessions')
+    @include('components.write-card') <!-- Write card inclusion -->
     <div class="row">
-        <!-- Blog posts section -->
         <div class="col-md-8">
-            {{-- kolom menulis blog --}}
-            
-            <h2 class="mb-4">Latest Blog Posts</h2>
-            
-            <!-- Blog post 1 -->
-            <div class="card mb-4">
-                <img src="https://via.placeholder.com/750x300" class="card-img-top" alt="Blog Image">
-                <div class="card-body">
-                    <h5 class="card-title">Blog Post Title 1</h5>
-                    <p class="card-text">This is a short description of the blog post. It gives a summary of the content and entices readers to click and read more.</p>
-                    <a href="#" class="btn btn-primary">Read More</a>
-                </div>
-            </div>
-            
-            <!-- Blog post 2 -->
+            <h2 class="mb-4">Latest Posts</h2>
+            @include('components.read-post-card')
             <div class="card mb-4">
                 <img src="https://via.placeholder.com/750x300" class="card-img-top" alt="Blog Image">
                 <div class="card-body">

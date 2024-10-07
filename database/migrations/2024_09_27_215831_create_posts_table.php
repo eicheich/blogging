@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('thumbnail')->nullable();
             $table->boolean('archived')->default(false);
             $table->boolean('allow_interaction')->default(true);
-            
             $table->timestamps();
         });
     }
