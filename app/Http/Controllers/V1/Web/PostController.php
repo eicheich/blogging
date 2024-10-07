@@ -45,11 +45,11 @@ class PostController
             ]);
 
             DB::commit();
-            return redirect()->route('index')->with('success', 'Post created successfully');
+            return redirect()->route('index')->with('success', 'Your post was sent');
         } catch (\Exception $e) {
             print($e->getMessage());
             DB::rollBack();
-            return redirect()->route('index')->with('error', 'Failed to create post: ' . $e->getMessage());
+            return redirect()->route('index')->with('error', 'Failed to send post' , $e->getMessage());
         }
     }
     //

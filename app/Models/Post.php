@@ -19,4 +19,10 @@ class Post extends Model
         'allow_interaction',
         'user_id'
     ];
+
+    // relasi ke user
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
