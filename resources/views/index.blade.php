@@ -6,15 +6,11 @@
 @section('content')
 
 <div class="container mt-5">
+    @include('layouts.sessions')
     @include('components.write-card') <!-- Write card inclusion -->
     <div class="row">
-        <!-- Blog posts section -->
         <div class="col-md-8">
-            {{-- kolom menulis blog --}}
-            
             <h2 class="mb-4">Latest Blog Posts</h2>
-            
-            <!-- Blog post 1 -->
             <div class="card mb-4">
                 <img src="https://via.placeholder.com/750x300" class="card-img-top" alt="Blog Image">
                 <div class="card-body">

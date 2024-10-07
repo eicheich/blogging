@@ -37,7 +37,7 @@ class PostController
             $post = Post::create([
                 'title' => $request->title,
                 'content' => $request->content,
-                'image' => $imagePath ?? null,
+                'thumbnail' => $imagePath ?? null,
                 'category_id' => $request->category_id,
                 'archived' => $isPrivate,
                 'allow_interaction' => $allowInteraction,
@@ -45,10 +45,11 @@ class PostController
             ]);
 
             DB::commit();
-            return redirect()->route('posts.index')->with('success', 'Post created successfully');
+            return redirect()->route('index')->with('success', 'Post created successfully');
         } catch (\Exception $e) {
+            print($e->getMessage());
             DB::rollBack();
-            return redirect()->route('posts.index')->with('error', 'Failed to create post: ' . $e->getMessage());
+            return redirect()->route('index')->with('error', 'Failed to create post: ' . $e->getMessage());
         }
     }
     //
