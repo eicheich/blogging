@@ -3,23 +3,22 @@
         Write a Post
     </div>
     <div class="card-body">
-        <form action="{{route('post.store')}}" method="POST">
-            @csrf <!-- Protects the form with Laravel's CSRF token -->
-            
-            <!-- Title input -->
+        <form action="{{route('post.store')}}" method="POST" enctype="multipart/form-data">
+            @csrf
             <div class="form-group mb-3">
                 <label for="title">Title</label>
                 <input type="text" class="form-control" id="title" name="title" placeholder="Enter title" required>
             </div>
-
-            <!-- Content input -->
             <div class="form-group mb-3">
                 <label for="content">Content</label>
                 <textarea class="form-control" id="content" name="content" rows="5" placeholder="Write your content here" required></textarea>
             </div>
             <div class="form-group mb-3">
                 <label for="image">Upload Image</label>
-                <input type="file" class="form-control" id="image" name="image" accept="image/*">
+                <input type="file" class="form-control" id="image" name="image" accept="image/*" onchange="previewImage(event)">
+            </div>
+            <div class="form-group mb-3">
+                <img id="image-preview" src="#" alt="Image Preview" style="display: none; max-width: 50%; height: auto;">
             </div>
             <div class="form-check mb-3">
                 <input class="form-check-input" type="checkbox" id="is_private" name="is_private">
@@ -38,7 +37,22 @@
         </form>
     </div>
 </div>
-
+<script>
+    function previewImage(event) {
+        var output = document.getElementById('image-preview');
+        if (event.target.files.length > 0) {
+            var reader = new FileReader();
+            reader.onload = function(){
+                output.src = reader.result;
+                output.style.display = 'block';
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        } else {
+            output.src = '#';
+            output.style.display = 'none';
+        }
+    }
+</script>
 <script>
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
