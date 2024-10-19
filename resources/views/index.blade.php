@@ -16,16 +16,6 @@
         <div class="col-md-8">
             <h3 class="mb-4">Latest Posts</h3>
             @include('components.read-post-card')
-            <div class="card mb-4">
-                <img src="https://via.placeholder.com/750x300" class="card-img-top" alt="Blog Image">
-                <div class="card-body">
-                    <h5 class="card-title">Blog Post Title 2</h5>
-                    <p class="card-text">Another short description about a different blog post. Make it intriguing to grab attention.</p>
-                    <a href="#" class="btn btn-primary">Read More</a>
-                </div>
-            </div>
-
-            <!-- Pagination -->
             <nav>
                 <ul class="pagination justify-content-center">
                     <li class="page-item disabled">
