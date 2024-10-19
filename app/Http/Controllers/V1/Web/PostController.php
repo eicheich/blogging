@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\DB;
 
 class PostController 
 {
+    public function create(Request $request) {
+        $request->validate([
+            'post_type' => 'required',
+        ]);
+        $postType = $request->post_type;
+        return view('post.write', compact('postType'));
+    }
 
     public function store(Request $request) {
         $auth = Auth::user();

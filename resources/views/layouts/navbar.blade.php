@@ -1,6 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">HOUSELAB</a>
+        <a class="navbar-brand" href="#">
+            <img src="{{ asset('storage/logo/logo.png') }}" alt="HOUSELAB" height="50">
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -8,15 +10,17 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
-                </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/about">About</a>
+                    <a class="nav-link" href="/blog">Browse</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contact">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/blog">Blog</a>
+                <li class="nav-item dropdown">
+                    <a id="writePostDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Write a Post
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="writePostDropdown">
+                        <a class="dropdown-item" href="/write/basic">Write a Post</a>
+                        <a class="dropdown-item" href="/write/story">Write Story</a>
+                    </div>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">

@@ -7,10 +7,14 @@
 
 <div class="container mt-5">
     @include('layouts.sessions')
-    @include('components.write-card') <!-- Write card inclusion -->
     <div class="row">
+        {{-- welcome $username --}}
+        <div class="col-md-12">
+            <h2>Welcome, {{ $user->username }}</h2>
+        </div>
+        <hr style="border-top: 1px solid #ccc; width: 100%;">
         <div class="col-md-8">
-            <h2 class="mb-4">Latest Posts</h2>
+            <h3 class="mb-4">Latest Posts</h3>
             @include('components.read-post-card')
             <div class="card mb-4">
                 <img src="https://via.placeholder.com/750x300" class="card-img-top" alt="Blog Image">

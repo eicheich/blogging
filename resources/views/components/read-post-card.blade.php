@@ -1,33 +1,28 @@
 @foreach($posts as $post)
-    <div class="card mb-4 shadow-sm border-0">
-        <div class="card-header d-flex align-items-center">
-            <img src="{{ $post->user->avatar ?? asset('storage/img/image.png') }}" 
-                 onerror="this.onerror=null;this.src='https://via.placeholder.com/40';" 
-                 class="rounded-circle" 
-                 alt="Author Avatar" 
-                 style="width: 40px; height: 40px; margin-right: 15px !important;">
-            <div>
-                <h6 class="mb-0 font-weight-bold">{{ $post->user->name }}</h6>
-                <small class="text-muted">{{ '@' . $post->user->username }}</small>
-            </div>
-        </div>
-        @if($post->thumbnail)
-            <img src="{{ $post->thumbnail }}" class="card-img-top" alt="Blog Image">
-        @endif
-
+    <div class="card mb-4 border-0">
         <div class="card-body">
-            <h5 class="card-title">{{ $post->title }}</h5>
-            <p class="card-text">
+            <h5 class="card-title poppins font-weight-bold">{{ $post->title }}</h5>
+            <p class="card-text crimson">
                 {{ Str::limit($post->content, 200, '...') }}
             </p>
-            <div class="mt-auto">
-                <a href="#" class="btn btn-primary btn-sm">Read More</a>
-                @if($post->allow_interaction == 1)
-                    <a href="#" class="btn btn-outline-primary btn-sm ml-2">Interact</a>
-                @else
-                    <a href="#" class="btn btn-outline-secondary btn-sm ml-2 disabled">Interact</a>
-                @endif
+            <div class="d-flex align-items-center">
+                <small class="text-muted">
+                    <span class="main-color">By {{ $post->user->name ?? 'Unknown Author' }}</span>
+                </small>
+                <style>
+                    
+                </style>
             </div>
+            <a href="#" class="text-dark font-weight-bold mt-3 d-block read-more-link">Read more</a>
+            <style>
+                .read-more-link {
+                    transition: color 0.3s ease;
+                }
+                .read-more-link:hover {
+                    color: #AF9371 !important; /* Change to your desired hover color */
+                }
+            </style>
         </div>
     </div>
+    <hr style="border-top: 1px solid #ccc; width: 100%;">
 @endforeach

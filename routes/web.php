@@ -28,6 +28,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::prefix('post')->middleware('auth')->group(function () {
+    Route::get('create', [PostController::class, 'create'])->name('post.create');
     Route::post('store', [PostController::class, 'store'])->name('post.store');
     Route::get('edit/{id}', [PostController::class, 'edit'])->name('post.edit');
     Route::post('update/{id}', [PostController::class, 'update'])->name('post.update');
