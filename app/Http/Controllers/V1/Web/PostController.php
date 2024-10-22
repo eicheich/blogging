@@ -11,9 +11,9 @@ class PostController
 {
     public function create(Request $request) {
         $request->validate([
-            'post_type' => 'required',
+            'postType' => 'required',
         ]);
-        $postType = $request->post_type;
+        $postType = $request->postType;
         return view('post.write', compact('postType'));
     }
 

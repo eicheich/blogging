@@ -18,8 +18,8 @@
                         Write a Post
                     </a>
                     <div class="dropdown-menu" aria-labelledby="writePostDropdown">
-                        <a class="dropdown-item" href="/write/basic">Write a Post</a>
-                        <a class="dropdown-item" href="/write/story">Write Story</a>
+                        <a class="dropdown-item" href="{{ route('post.create', ['postType' => 'basic']) }}">Write a Post</a>
+                        <a class="dropdown-item" href="{{ route('post.create', ['postType' => 'story']) }}">Write a Story</a>
                     </div>
                 </li>
             </ul>
