@@ -24,13 +24,16 @@
             cursor: pointer;
         }
         .main-color {
-                        color: #AF9371;
-                    }
+            color: #AF9371;
+        }
     </style>
 </head>
 <body>
     <!-- Main Content -->
     @yield('content')
+
+    <!-- Footer -->
+    @include('layouts.footer')
 
     <!-- JavaScript -->
     <script>

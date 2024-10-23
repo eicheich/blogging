@@ -9,9 +9,9 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    <a class="nav-link active" aria-current="page" href="{{ route('index') }}">Home</a>
                 <li class="nav-item">
-                    <a class="nav-link" href="/blog">Browse</a>
+                    <a class="nav-link disabled" href="/blog">Browse</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a id="writePostDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -19,7 +19,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="writePostDropdown">
                         <a class="dropdown-item" href="{{ route('post.create', ['postType' => 'basic']) }}">Write a Post</a>
-                        <a class="dropdown-item" href="{{ route('post.create', ['postType' => 'story']) }}">Write a Story</a>
+                        <a class="dropdown-item disabled" href="#">Soon</a>
                     </div>
                 </li>
             </ul>
